@@ -26,4 +26,3 @@
         user:
           name: "{{ username }}"
           email: "{{ email }}"
-      when: inventory_hostname == 'localhost'
