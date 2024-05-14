@@ -20,10 +20,10 @@
       register: output
 
     - name: Publish the changes
-          ansible.scm.git_publish:
-            path: "/tmp/git-network-cfg"
-            token: "{{ password }}"
-            user:
-              name: "{{ username }}"
-              email: "{{ email }}"
-          when: inventory_hostname == 'localhost'
+      ansible.scm.git_publish:
+        path: "/tmp/git-network-cfg"
+        token: "{{ password }}"
+        user:
+          name: "{{ username }}"
+          email: "{{ email }}"
+      when: inventory_hostname == 'localhost'
