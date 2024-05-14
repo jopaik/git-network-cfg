@@ -1,0 +1,29 @@
+---
+- name: Create configuration files from the resource modules
+  hosts: network, localhost
+  gather_facts: false
+  tasks:
+    - name: Retrieve a repository from a distant location and make it available to the local EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "https://github.com/jopaik/git-network-cfg.git"
+        parent_directory: /tmp
+        branch:
+          name: "master"
+          duplicate_detection: no
+      register: repository
+      when: inventory_hostname == 'localhost'
+
+    #do some tasks and then push changes to SCM
+    - name: Run Ansible playbook to generate config
+      ansible.builtin.command: ansible-playbook create-config.yml
+      register: output
+
+    - name: Publish the changes
+          ansible.scm.git_publish:
+            path: "/tmp/git-network-cfg"
+            token: "{{ password }}"
+            user:
+              name: "{{ username }}"
+              email: "{{ email }}"
+          when: inventory_hostname == 'localhost'
