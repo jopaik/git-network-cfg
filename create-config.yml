@@ -4,7 +4,7 @@
   tasks:
   - name: Creating a file with content
     copy:
-      dest: "./var-test.yml"
+      dest: "/tmp/git-network-cfg/var-test.yml"
       content: |
         line 01
         "line 02  hour {{ ansible_date_time.hour }}  minute {{ ansible_date_time.minute }}"
