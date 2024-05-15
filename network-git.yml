@@ -22,8 +22,6 @@
     - name: Publish the changes
       ansible.scm.git_publish:
         path: "/tmp/git-network-cfg"
-        branch:
-          name: "master"
         token: "{{ password }}"
         user:
           name: "{{ username }}"
