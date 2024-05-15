@@ -1,6 +1,6 @@
 ---
-- name: Create configuration files from the resource modules
-  hosts: network, localhost
+- name: Create config from Git Repo
+  hosts: localhost
   gather_facts: false
   tasks:
     - name: Retrieve a repository from a distant location and make it available to the local EE
