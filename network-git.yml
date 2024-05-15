@@ -7,6 +7,7 @@
       ansible.scm.git_retrieve:
         origin:
           url: "https://github.com/jopaik/git-network-cfg.git"
+          token: "{{ password }}"
         parent_directory: /tmp
         branch:
           name: "main"
