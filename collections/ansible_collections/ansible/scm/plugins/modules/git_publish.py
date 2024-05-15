@@ -26,7 +26,7 @@ options:
       message:
         description:
           - The commit message
-        default: 'Updates made by ansible with play: {play_name}'
+        default: 'Ansible published this: {play_name}'
         type: str
   include:
     description:
