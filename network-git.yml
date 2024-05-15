@@ -17,6 +17,8 @@
     #do some tasks and then push changes to SCM
     - name: Run Ansible playbook to generate config
       ansible.builtin.command: ansible-playbook create-config.yml
+      args:
+        chdir: /tmp/git-network-cfg
       register: output
 
     - name: Publish the changes
