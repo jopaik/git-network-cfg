@@ -9,7 +9,7 @@
           url: "https://github.com/jopaik/git-network-cfg.git"
         parent_directory: /tmp
         branch:
-          name: "master"
+          name: "main"
           duplicate_detection: no
       register: repository
       when: inventory_hostname == 'localhost'
