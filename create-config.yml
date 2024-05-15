@@ -7,4 +7,4 @@
       dest: "./var-test.yml"
       content: |
         line 01
-        "line 02  hour {{ ansible_date_time.hour }}  minute {{ ansible_date_time.minute }}"
+        "line 02  date {{ ansible_date_time.date }} hour {{ ansible_date_time.hour }}  minute {{ ansible_date_time.minute }}"
