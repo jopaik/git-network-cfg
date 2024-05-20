@@ -4,7 +4,8 @@
   gather_facts: false
   vars:
     username: "{{ ansible_user }}"
-    password: "{{ ansible_password }}
+    password: "{{ ansible_password }}"
+    
   tasks:
     - name: Retrieve a repository from a distant location and make it available to the local EE
       ansible.scm.git_retrieve:
